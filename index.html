@@ -11,6 +11,19 @@
 <meta property="og:url" content="https://hellonewguy.github.io/">
 <meta property="og:description" content="Java, computer graphics, algorithms, and practical projects.">
 <title>HelloNewGuy | Computer Science Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+(function () {
+  var choice = null;
+  try { choice = localStorage.getItem("portfolio-theme"); } catch (error) {}
+  if (choice !== "light" && choice !== "dark") {
+    choice = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  document.documentElement.setAttribute("data-theme", choice);
+})();
+</script>
 <style>
 :root{--bg:#f7fbfc;--white:#fff;--text:#14394f;--muted:#4c6b7d;--blue:#125fab;--teal:#087a80;--line:#c9dee5;--focus:#bb6235}
 *,*::before,*::after{box-sizing:border-box}
@@ -92,11 +105,71 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:960px){.hero-layout{gap:28px}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{gap:30px}.skills-layout{grid-template-columns:1fr;gap:24px}}
 @media(max-width:710px){.wrap{width:calc(100% - 34px)}.nav{padding:14px 0;align-items:flex-start;flex-direction:column;gap:12px}nav{gap:15px}.hero{padding:58px 0 78px}.hero-layout,.feature-grid,.project-grid,.about-grid{grid-template-columns:1fr}.art{max-width:470px;transform:none;box-shadow:7px 7px 0 #cde8e2}.heading{flex-direction:column;align-items:flex-start}section{padding:63px 0}.project{flex-direction:column;align-items:flex-start}.stats,.skill-grid{grid-template-columns:1fr}.contact-content{flex-direction:column;align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Source Sans 3 is a humanist typeface; IBM Plex Mono appears only in technical details. */
+body{font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;font-size:17px;line-height:1.58}
+h1{font-weight:700;letter-spacing:-.043em}
+h2.section-title{font-weight:700;letter-spacing:-.035em}
+.featured-card h3{font-weight:700;letter-spacing:-.025em}
+.eyebrow,.category,.label{letter-spacing:.045em;font-weight:700}
+.featured-card small,.project small,.art-head{font-family:"IBM Plex Mono",Consolas,monospace;font-weight:500;letter-spacing:0}
+.theme-toggle{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #abc9d7;border-radius:7px;background:#eef7f9;color:#1c506a;padding:8px 12px;font:650 .85rem/1.2 "Source Sans 3","Segoe UI",sans-serif;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
+.theme-toggle:hover{background:#ddedf3;border-color:#7cafc2}
+.theme-toggle:focus-visible{outline:3px solid #bc763c;outline-offset:3px}
+.theme-icon{font-size:1.15rem;line-height:1}
+html[data-theme="light"]{color-scheme:light}
+html[data-theme="dark"]{color-scheme:dark;--bg:#102a39;--white:#153341;--text:#e9f3f6;--muted:#c1d4df;--blue:#8bc8f0;--teal:#8adbd0;--line:#446778;--focus:#f7b67b}
+html[data-theme="dark"] header{background:#142f3e;border-bottom-color:#3d6272}
+html[data-theme="dark"] .logo b{background:#8cc7ee;color:#153544}
+html[data-theme="dark"] nav a{color:#d5e7ec}
+html[data-theme="dark"] nav a:hover{color:#9bd8ef}
+html[data-theme="dark"] nav .github{border-color:#5d8494;color:#d9eff4}
+html[data-theme="dark"] .theme-toggle{background:#26495b;border-color:#628595;color:#e3f4f5}
+html[data-theme="dark"] .theme-toggle:hover{background:#356073}
+html[data-theme="dark"] h1 em{color:#96c9f3}
+html[data-theme="dark"] .hero p{color:#c5d8df}
+html[data-theme="dark"] .hero .small{color:#b4ced5}
+html[data-theme="dark"] .eyebrow,html[data-theme="dark"] .label,html[data-theme="dark"] .category{color:#89d6d3}
+html[data-theme="dark"] .eyebrow:before{background:#8bdfd5}
+html[data-theme="dark"] .button.primary{background:#8bc8f0;color:#123142;border-color:#8bc8f0}
+html[data-theme="dark"] .button.secondary{background:#1e4052;color:#b9e4f8;border-color:#79b2d9}
+html[data-theme="dark"] .art{background:#274d61;border-color:#5b7e92;box-shadow:11px 11px 0 #183d48}
+html[data-theme="dark"] .art-head{color:#c1e4f0}
+html[data-theme="dark"] .art-head span:last-child{background:#193c4f;border-color:#648fa0}
+html[data-theme="dark"] .art p{color:#d1e4ed}
+html[data-theme="dark"] .art svg rect{fill:#173849;stroke:#60869b}
+html[data-theme="dark"] .art svg circle:first-of-type{fill:#284b5f;stroke:#51788a}
+html[data-theme="dark"] .projects-section,html[data-theme="dark"] .skills-section{background:#14313e}
+html[data-theme="dark"] .heading p,html[data-theme="dark"] .fine{color:#b5cbd3}
+html[data-theme="dark"] .featured-card.sky{background:#214c65;border-color:#467995}
+html[data-theme="dark"] .featured-card.mint{background:#205149;border-color:#438b79}
+html[data-theme="dark"] .featured-card.lav{background:#333f62;border-color:#5d7095}
+html[data-theme="dark"] .featured-card .category{color:#aedee9}
+html[data-theme="dark"] .featured-card p{color:#d1e2e9}
+html[data-theme="dark"] .featured-card small{color:#bddeeb}
+html[data-theme="dark"] .featured-card a,html[data-theme="dark"] .project a{color:#a6dfff}
+html[data-theme="dark"] .project{background:#1b3c4c;border-color:#41697a}
+html[data-theme="dark"] .project p,html[data-theme="dark"] .project small{color:#c0d5dd}
+html[data-theme="dark"] .about-section{background:#1b404b}
+html[data-theme="dark"] .about-grid p{color:#d1e2e7}
+html[data-theme="dark"] .stats div{background:#274f5d;border-left-color:#84d8d2}
+html[data-theme="dark"] .stats strong{color:#b1e7e4}
+html[data-theme="dark"] .stats span{color:#d4e4ea}
+html[data-theme="dark"] .about-grid .fine{color:#b8cdd2}
+html[data-theme="dark"] .skill{border-bottom-color:#466a7a}
+html[data-theme="dark"] .skill p{color:#c1d6df}
+html[data-theme="dark"] .contact-section{background:#215473}
+html[data-theme="dark"] .contact-section .label{color:#b0e2e1}
+html[data-theme="dark"] .contact-section p{color:#deedf5}
+html[data-theme="dark"] .contact-section a{background:#e7f6fa;color:#16465d}
+html[data-theme="dark"] footer{background:#103748;color:#d0e6ec}
+@media(max-width:710px){.theme-toggle{padding:7px 10px;font-size:.8rem} nav{column-gap:13px}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
-<header><div class="wrap nav"><a class="logo" href="#top"><b aria-hidden="true">H.</b>HelloNewGuy</a><nav aria-label="Main navigation"><a href="#projects">Work</a><a href="#about">Background</a><a href="#skills">Skills</a><a class="github" href="https://github.com/HelloNewGuy" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div></header>
+<header><div class="wrap nav"><a class="logo" href="#top"><b aria-hidden="true">H.</b>HelloNewGuy</a><nav aria-label="Main navigation"><a href="#projects">Work</a><a href="#about">Background</a><a href="#skills">Skills</a><a class="github" href="https://github.com/HelloNewGuy" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch color theme" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button></nav></div></header>
 <main id="content">
 <div id="top" class="hero"><div class="wrap hero-layout"><div><span class="eyebrow">Computer Science student · Graduating 2027</span><h1>I like figuring out <em>how things work.</em> Then making them better.</h1><p>I'm learning to build software through Java, algorithms, and computer graphics. My experience in operations has also taught me to listen, identify barriers, and think about how decisions affect people.</p><div class="actions"><a class="button primary" href="#projects">Explore projects ↗</a><a class="button secondary" href="https://github.com/HelloNewGuy" target="_blank" rel="noopener noreferrer">Browse GitHub</a></div><p class="small">Interested in software engineering internships and learning from international teams.</p></div>
 <aside class="art"><div class="art-head"><span>PROJECT IN FOCUS</span><span>JAVA + OPENGL</span></div><svg viewBox="0 0 420 265" role="img" aria-label="Geometric illustration of a three-dimensional wireframe cube"><rect x="6" y="6" width="408" height="253" rx="11" fill="#f0f8fb" stroke="#abd1dc" stroke-width="2"/><g stroke="#c4dfe7" stroke-width="1"><path d="M6 70H414M6 137H414M6 203H414M89 6V259M173 6V259M257 6V259M340 6V259"/></g><circle cx="208" cy="133" r="98" fill="#dceff2" stroke="#abcdd5" stroke-dasharray="5 7"/><g fill="none" stroke="#1b66ac" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"><path d="M143 102L242 83L294 141L194 165Z"/><path d="M143 102V178L194 222L194 165M194 222L294 198V141M242 83V157L294 198M143 178L242 157L294 141"/></g><circle cx="143" cy="102" r="6" fill="#0a999b"/><circle cx="294" cy="198" r="6" fill="#e4a04f"/></svg><h2>Interactive 3D Viewer</h2><p>Camera navigation, object selection, and 3D transformations. Illustration, not a program screenshot.</p></aside></div></div>
@@ -112,5 +185,40 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <section id="contact" class="contact-section"><div class="wrap contact-content"><div><span class="label">Let's connect</span><h2 class="section-title">I'd love to learn from people building useful technology.</h2><p>I'm looking for opportunities to learn, contribute, and keep developing my engineering skills.</p></div><a href="https://github.com/HelloNewGuy" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div></section>
 </main>
 <footer><div class="wrap"><span>HelloNewGuy · Computer Science Portfolio</span><span>Built with HTML & CSS · 2026</span></div></footer>
+<script>
+(function () {
+  // Strip inbound marketing parameters without losing project-section anchors.
+  try {
+    var url = new URL(window.location.href);
+    var changed = false;
+    Array.from(url.searchParams.keys()).forEach(function (key) {
+      var lower = key.toLowerCase();
+      if (lower.indexOf("utm_") === 0 || ["fbclid","gclid","mc_cid","mc_eid"].indexOf(lower) !== -1) {
+        url.searchParams.delete(key);
+        changed = true;
+      }
+    });
+    if (changed) window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
+  } catch (error) {}
+
+  var toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+  function refreshToggle() {
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    toggle.setAttribute("aria-pressed", dark ? "true" : "false");
+    toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    toggle.querySelector(".theme-label").textContent = dark ? "Light mode" : "Dark mode";
+    toggle.querySelector(".theme-icon").textContent = dark ? "☀" : "☾";
+  }
+  toggle.addEventListener("click", function () {
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    var next = dark ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("portfolio-theme", next); } catch (error) {}
+    refreshToggle();
+  });
+  refreshToggle();
+})();
+</script>
 </body>
 </html>
